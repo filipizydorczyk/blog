@@ -1,0 +1,7 @@
+{
+    "thumbnail": "https://cms.filipizydorczyk.pl/api/v1/media/Pasted image 20230821175501.png",
+    "description": "I don't even remember how I learned about CalDAV protocol, but it was always a mystery to me. Recently I started to playing with it, and it surprised me how easy it is but also how complex it is at the same time.",
+    "related_links": {
+        "gits": "https://github.com/filipizydorczyk/poc-caldav-timeline"
+    }
+}
