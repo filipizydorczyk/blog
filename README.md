@@ -5,3 +5,5 @@ This CMS is headless and file based which means that has no UI and all my posts 
 There are 2 direcotories:
  - `media` - this is where all photos or videos should be stored. If you want somthing more efficient you can host some CDN server and just provide a link to a photo. At the end of the day its all markdown links anyway.
  - `articles` - this is where I write my actual posts. Each posts is required to have `.md` file and name of this file will be the name of the article used to fetch it via API. If you want to add some metadata to article that will be accessible via api you can also create `.json` file with same name. The json you will provide here will be available in API response so you can modele it any way you want as long as you are consisten.
+
+ To look for mistakes I use [languagetool](https://languagetool.org/pl)
