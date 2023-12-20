@@ -84,4 +84,4 @@ declare global {
 }
 ```
 
-The `HTMLTag` might be just a string, although you will not get autocompletion in your IDE nor will you get dyntax check if html tag is valid. If you want to get these two thing you woult have to define new ts type `export type HTMLTag = typeof HTML_TAGS[number];` where `HTML_TAGS` is just an array of valid html tags.
+The `HTMLTag` might be just a string, although you will not get autocompletion in your IDE nor will you get syntax check if html tag is valid. If you want to get these two things you would have to define new ts type `export type HTMLTag = typeof HTML_TAGS[number];` where `HTML_TAGS` is just an array of valid html tags.
