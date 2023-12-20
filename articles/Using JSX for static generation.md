@@ -79,7 +79,7 @@ declare global {
 			};
 		};
 
-		type Element = Readable;
+		type Element = string;
 	}
 }
 ```
