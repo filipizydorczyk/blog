@@ -59,7 +59,7 @@ every single time. For our case, we just need a different import, like
 import { CustomJSX } from "./jsx";
 ```
 
-It's up to you to define your API. But that's really it. You might even skip the import step if your bundler allows you to create some autoimport configuration. The only issue is that if you want to use typescript, you will have to create `.d.ts` file to prevent some typescript syntax errors. That's because we need to define `JSX` namespace
+It's up to you to define your API. But that's really it. You might even skip the import step if your bundler allows you to create some autoimport configuration. The only issue is that if you want to use typescript, you will have to create `.d.ts` file to prevent some typescript syntax errors. That's because we need to define `JSX` namespace which normally would be imported with `React` import.
 
 ```ts
 declare global {
