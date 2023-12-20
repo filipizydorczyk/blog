@@ -8,11 +8,11 @@ Another solution is to use some bundlers instead. You can use whatever you want 
 import * as esbuild from "esbuild";
 
 esbuild.build({
-    bundle: true,
-    platform: "node",
-    entryPoints: ["app.tsx"],
-    outfile: "app.js",
-    jsxFactory: "CustomJSX.createElement",
+  bundle: true,
+  platform: "node",
+  entryPoints: ["app.tsx"],
+  outfile: "app.js",
+  jsxFactory: "CustomJSX.createElement",
 });
 ```
 
@@ -22,13 +22,30 @@ But we still need to write this function and import it. This should not take a l
 
 ```ts
 const CustomJSX = {
-    createElement: (tag, properties, ...children): string => {
-        return `<${tag}>${children}</${tag}>`;
-    },
+  createElement: (tag, properties, ...children): string => {
+    const props = /* transform properties to string */
+
+    if (typeof tag === "string") {
+        /* if void element */ return return `<${tag} ${props} />`;
+        /* else */ return `<${tag} ${props}>${children}</${tag}>`;
+    }
+
+    return tag(properties);
+  },
 };
 ```
 
-Complete implementation would not take much longer, and if you need some specific features for your project, you can also implement them here!
+The `tag` can be either tag name (string) or a function if we used a component in this plcae (eg. `<Component />`). The `properties` is just a json with diffrent properties to render, like `{"name":"input-name"}` and `children` are rendered children (rendered string). We could define ts type for this function
+
+```ts
+type ComponentProps = Record<string, string> | null;
+
+type CreateElementFuntion = (
+	tag: string | ((properties: ComponentProps) => Readable),
+	properties: ComponentProps,
+	...children: string[]
+) => string;
+```
 
 Then we just need to import it into every jsx file. It's not really different from what we do in react. When we create a React component we need to import
 
@@ -42,4 +59,29 @@ every single time. For our case, we just need a different import, like
 import { CustomJSX } from "./jsx";
 ```
 
-It's up to you to define your API. But that's really it. You might even skip the import step if your bundler allows you to create some autoimport configuration. The only issue is that if you want to use typescript, you will have to create `.d.ts` file to prevent some typescript syntax errors. But that is a whole different story.
+It's up to you to define your API. But that's really it. You might even skip the import step if your bundler allows you to create some autoimport configuration. The only issue is that if you want to use typescript, you will have to create `.d.ts` file to prevent some typescript syntax errors. That's because we need to define `JSX` namespace
+
+```ts
+declare global {
+	namespace JSX {
+		type HtmlAttribute = string | boolean;
+		type HtmlElement = HTMLTag;
+
+		interface IntrinsicElements extends IntrinsicElementMap {}
+
+		interface InstrictPropsInterface {
+			[k: string]: HtmlAttribute | Promise<HtmlAttribute>;
+		}
+
+		type IntrinsicElementMap = {
+			[K in HtmlElement]: InstrictPropsInterface & {
+				children?: HtmlElement | HtmlElement[];
+			};
+		};
+
+		type Element = Readable;
+	}
+}
+```
+
+The `HTMLTag` might be just a string, although you will not get autocompletion in your IDE nor will you get dyntax check if html tag is valid. If you want to get these two thing you woult have to define new ts type `export type HTMLTag = typeof HTML_TAGS[number];` where `HTML_TAGS` is just an array of valid html tags.
