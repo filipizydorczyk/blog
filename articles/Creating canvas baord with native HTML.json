@@ -1,4 +1,7 @@
 {
     "thumbnail": "https://cms.filipizydorczyk.pl/api/v1/media/react-board.gif",
-    "description": "As usually, I tend to solve issues that doesn't exist. This time I wanted to have implemention of the board just like one in Figma but with a possibility of having HTML code inside and not just simple 2D shapes and images."
+    "description": "As usually, I tend to solve issues that doesn't exist. This time I wanted to have implemention of the board just like one in Figma but with a possibility of having HTML code inside and not just simple 2D shapes and images.",
+    "related_links": {
+        "gits": "https://github.com/filipizydorczyk/poc-react-html-white-board"
+    }
 }
