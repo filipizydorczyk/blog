@@ -1,4 +1,4 @@
 {
     "thumbnail": "https://cms.filipizydorczyk.pl/api/v1/media/YT disabled.png",
-    "description": "Usually, when a client wanted to have a carousel on their website, I would just look for a JS library that creates one. But recently I tried things differently. I looked for CSS based carousels in Google and this is what I found..."
+    "description": "It seems like disabling a form is an easy task, but there might be tricky situations sometimes and this is one way of handling them."
 }
