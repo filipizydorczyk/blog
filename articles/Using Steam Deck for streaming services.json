@@ -1,0 +1,7 @@
+{
+    "thumbnail": "https://cms.filipizydorczyk.pl/api/v1/media/Steamdeck YT.gif",
+    "description": "Since I acquired my Steam Deck, I couldn't shake the feeling that something is missing from it. It appears to be the ideal solution for utilizing streaming services while traveling. However, it lacks any dedicated streaming app.",
+    "related_links": {
+        "gits": "https://github.com/filipizydorczyk/steamdeck-yt-plugin"
+    }
+}
