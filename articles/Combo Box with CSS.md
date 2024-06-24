@@ -1,6 +1,6 @@
 Recently I was requested to do a combo box component and I got the design. It was basically a select box with checkboxes inside that gives you multiple selection option. I didn't like the concept because there is no such component in HTML that I could easily style, and also not using plain HTML inputs makes it annoying to send this data to backend later.
 
-<img src="https://cms.filipizydorczyk.pl/api/v1/media/combo-box-example.png">
+<img style="max-width: 500px;margin: 0 auto;display: block;" src="https://cms.filipizydorczyk.pl/api/v1/media/combo-box-example.png">
 
 _example of combo box from [vuetifyjs](https://vuetifyjs.com/en/components/combobox/#usage)_
 
@@ -41,10 +41,7 @@ It solves the issue with how I want to send the selected data. You would just ge
 </html>
 ```
 
-<video style="width: 100%; height: auto;" controls>
-  <source src="https://cms.filipizydorczyk.pl/api/v1/media/combo-box-css-example.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<img src="https://cms.filipizydorczyk.pl/api/v1/media/combo-box-css-example.gif">
 
 Here we have text input instead of div, but you can do the same with div. You just need to remember to add `tabindex` attribute so that div is actually focusable `<div tabindex="-1">Tabbable due to tabindex.</div>`. The reason why we are using `focus-within` is because using just `focus` selector will close the box once we select any value (since he focuses is not on the preview element but on the checkbox). `focus-within` will remain active as long as the HTML element or any of its children is focused so clicking checkboxes will not close it.
 
