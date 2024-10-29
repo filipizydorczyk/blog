@@ -82,9 +82,4 @@ export default async function SubscriptionFetcher(props: { subs: string[] }) {
 }
 ```
 
-This is how it worked together:
-
-<video controls>
-    <source src="https://cms.filipizydorczyk.pl/api/v1/media/ssr.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
+[This](https://github.com/filipizydorczyk/poc-cross-platform-subscriptions/blob/main/video.mp4) is how it worked together
