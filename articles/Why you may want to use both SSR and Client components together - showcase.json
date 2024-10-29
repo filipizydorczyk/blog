@@ -1,5 +1,5 @@
 {
-  "thumbnail": "https://cms.filipizydorczyk.pl/api/v1/media/ssr.png?h=200",
+  "thumbnail": "https://cms.filipizydorczyk.pl/api/v1/media/ssr.png",
   "description": "This project turned out to be a fun showcase of how server components and client components can act together and serve different purposes",
   "related_links": {
     "gits": "https://github.com/filipizydorczyk/poc-cross-platform-subscriptions"
