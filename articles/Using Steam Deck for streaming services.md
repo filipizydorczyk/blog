@@ -63,3 +63,19 @@ There are some issues, though:
 3. If I wanted to use multiple streaming platforms, each one would require a new extension.
 
 So even though it's a cool proof of concept, we need something more than that. At the moment, the only way I see is to use Android TV apps with some kind of emulation/translation layer and create mappings from Steam Deck controls to TV remote controls. This would undoubtedly provide a much smoother experience, and we would have a standardized set of inputs to map to... However, I am not aware of an easy and reliable way to run Android apps on Linux, which is what Steam Deck really is.
+
+**!!!UPDATE**
+
+Some time later, I discovered [a Reddit article](https://www.reddit.com/r/SteamDeck/s/IokFzo12EH) that shows you that you actually CAN have a TV app for YouTube on steam deck. It appears that TV app is just a regular website `https://youtube.com/tv`. You just need to set user agent as some TV device because if you are not using TV, website will just redirect you to regular YouTube app. 
+
+Long story short, you add non-steam game with this command (you can see detailed instructions in original Reddit post)
+
+```sh
+run --branch=stable --arch=x86_64 --command=/app/bin/chrome --file-forwarding com.google.Chrome @@u @@ --window-size=1024,640 --force-device-scale-factor=1.25 --device-scale-factor=1.25 --start-fullscreen --user-agent="SMART-TV; Tizen 4.0" https://youtube.com/tv
+```
+
+And this is the result.
+
+<img src="https://cms.filipizydorczyk.pl/api/v1/media/PXL_20241116_011256532.MP.jpg">
+
+You can use touch screen but if you use good steam deck layout you can also navigate it with controls! This literally what I meant by handheld experience and I hope to use the similar approach for other services.
